@@ -16,7 +16,6 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 script {
-                    // Membuat Docker image
                     docker.build("${DOCKER_IMAGE}:${DOCKER_TAG}")
                 }
             }
@@ -25,7 +24,7 @@ pipeline {
         stage('Run Container') {
             steps {
                 script {
-                    // Menjalankan container
+                    // Menjalankan container dengan docker run
                     sh 'docker run -d -p 8000:9000 --name laravel_app laravel-app:latest'
                 }
             }
