@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/AkbarIlham20st/compBicopi.git'
+                git branch: 'main', url: 'https://github.com/AkbarIlham20st/compBicopi.git'
             }
         }
 
